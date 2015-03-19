@@ -1,0 +1,31 @@
+{
+  "uuid": "6af97285-aaa3-42b4-86d3-334cac7a4392",
+  "shortName": "Tutorial2",
+  "longName": "Tutorial2",
+  "companyName": "jaypes",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "sdkVersion": "3",
+  "targetPlatforms": ["aplite", "basalt"],
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": [
+      {
+        "type":"font",
+        "name":"FONT_PERFECT_DOS_48",
+        "file":"fonts/bebas-neue.ttf",
+        "compatibility": "2.7"
+      },
+      {
+        "type":"png",
+        "name":"IMAGE_BACKGROUND",
+        "file":"images/background.png"
+      }
+    ]
+  }
+}
