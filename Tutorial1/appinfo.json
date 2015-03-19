@@ -1,0 +1,19 @@
+{
+  "uuid": "643a02cc-2f20-47be-8d48-3fcade092bc4",
+  "shortName": "Tutorial1",
+  "longName": "Tutorial1",
+  "companyName": "jaypes",
+  "versionCode": 1,
+  "versionLabel": "1.0",
+  "sdkVersion": "3",
+  "targetPlatforms": ["aplite", "basalt"],
+  "watchapp": {
+    "watchface": true
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": []
+  }
+}
