@@ -2,8 +2,11 @@
   
 static Window *s_main_window;
 static TextLayer *s_time_layer;
+static TextLayer *s_weather_layer;
  
 static GFont s_time_font;
+static GFont s_weather_font;
+ 
 static BitmapLayer *s_background_layer;
 static GBitmap *s_background_bitmap;
  
@@ -36,9 +39,9 @@ static void main_window_load(Window *window) {
   layer_add_child(window_get_root_layer(window), bitmap_layer_get_layer(s_background_layer));
   
   // Create time TextLayer
-  s_time_layer = text_layer_create(GRect(5, 52, 139, 50));
+  s_time_layer = text_layer_create(GRect(0, 39, 144, 168));
   text_layer_set_background_color(s_time_layer, GColorClear);
-  text_layer_set_text_color(s_time_layer, GColorBlack);
+  text_layer_set_text_color(s_time_layer, GColorWhite);
   text_layer_set_text(s_time_layer, "00:00");
   
   //Create GFont
@@ -50,6 +53,18 @@ static void main_window_load(Window *window) {
  
   // Add it as a child layer to the Window's root layer
   layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_time_layer));
+  
+  // Create temperature Layer
+  s_weather_layer = text_layer_create(GRect(0, 135, 144, 25));
+  text_layer_set_background_color(s_weather_layer, GColorClear);
+  text_layer_set_text_color(s_weather_layer, GColorWhite);
+  text_layer_set_text_alignment(s_weather_layer, GTextAlignmentCenter);
+  text_layer_set_text(s_weather_layer, "JAYPES21");
+  
+  // Create second custom font, apply it and add to Window
+  s_weather_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_PERFECT_DOS_20));
+  text_layer_set_font(s_weather_layer, s_weather_font);
+  layer_add_child(window_get_root_layer(window), text_layer_get_layer(s_weather_layer));
   
   // Make sure the time is displayed from the start
   update_time();
@@ -67,6 +82,10 @@ static void main_window_unload(Window *window) {
   
   // Destroy TextLayer
   text_layer_destroy(s_time_layer);
+  
+  // Destroy weather elements
+  text_layer_destroy(s_weather_layer);
+  fonts_unload_custom_font(s_weather_font);
 }
  
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
