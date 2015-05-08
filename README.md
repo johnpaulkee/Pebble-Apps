@@ -1,3 +1,3 @@
-# pebbleApps
+# Welcome to my pebble applications folder!
 
-# Location of where I keep the pebble apps I've created
+I keep all of my current watchface designs in this folder, and work-in-progress applications that I use daily for my Pebble Steel.
